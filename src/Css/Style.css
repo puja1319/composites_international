@@ -140,6 +140,14 @@
     color: #26252C;
 }
 
+.w_38{
+    width: 38%;
+}
+
+.w_42 {
+    width: 42%;
+}
+
 @media screen and (min-width: 1920px) {
     .main_heading {
         font-family: Roboto;
@@ -277,5 +285,13 @@
         font-weight: 400;
         line-height: 16px;
         color: #26252C;
+    }
+
+    .w_38{
+        width: 38%;
+    }
+
+    .w_42 {
+        width: 50%;
     }
 }
