@@ -47,25 +47,25 @@
 
 .right_tracking_text {
     font-family: Roboto;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 600;
-    line-height: 20px;
+    line-height: 16px;
     text-align: right;
     color: #64646F;
 }
 
 .right_tracking_value {
     font-family: Roboto;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 600;
-    line-height: 24px;
+    line-height: 20px;
     text-align: center;
     color: #26252C;
 }
 
 .time_div_h_w {
-    height: 50px;
-    width: 150px;
+    height: 40px;
+    width: 120px;
 }
 
 .gauge_factor_div {
@@ -84,7 +84,7 @@
 
 .gage_txt {
     font-family: Roboto;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 600;
     line-height: 58px;
     text-align: center;
@@ -145,7 +145,7 @@
 }
 
 .w_42 {
-    width: 42%;
+    width: 46%;
 }
 .image_size{
     height: 22px;
@@ -296,7 +296,7 @@
     }
 
     .w_42 {
-        width: 50%;
+        width: 40%;
     }
     .image_size{
         height: 33px;
