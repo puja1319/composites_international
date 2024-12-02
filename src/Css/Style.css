@@ -75,8 +75,8 @@
 }
 
 .gauge_value_box {
-    height: 320px;
-    width: 440px;
+    height: 220px;
+    width: 320px;
     border: 1px solid #B9B9B9;
     border-radius: 40px;
     box-shadow: 0px 10px 10px 0px #D2D6E1A6;
@@ -84,7 +84,7 @@
 
 .gage_txt {
     font-family: Roboto;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 600;
     line-height: 58px;
     text-align: center;
@@ -93,7 +93,7 @@
 
 .gage_txt_value {
     font-family: Roboto;
-    font-size: 28px;
+    font-size: 25px;
     font-weight: 600;
     line-height: 28px;
     text-align: center;
@@ -102,9 +102,9 @@
 
 .area_wise_value {
     font-family: Poppins;
-    font-size: 84px;
+    font-size: 60px;
     font-weight: 600;
-    line-height: 58px;
+    line-height: 40px;
     letter-spacing: -2px;
     text-align: center;
     color: #26252C;
@@ -112,9 +112,9 @@
 
 .area {
     font-family: Roboto;
-    font-size: 28px;
+    font-size: 20px;
     font-weight: 600;
-    line-height: 32px;
+    line-height: 20px;
     text-align: left;
     color: #85858E;
 }
@@ -141,11 +141,15 @@
 }
 
 .w_38{
-    width: 38%;
+    width: 40%;
 }
 
 .w_42 {
     width: 42%;
+}
+.image_size{
+    height: 22px;
+    width: 22px;
 }
 
 @media screen and (min-width: 1920px) {
@@ -293,5 +297,9 @@
 
     .w_42 {
         width: 50%;
+    }
+    .image_size{
+        height: 33px;
+        width: 33px;
     }
 }

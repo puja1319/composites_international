@@ -51,7 +51,7 @@ const WeightMonitor = () => {
                         <div>
                             <div className="area_wise_value mb-5">564</div>
                             <div className="d-flex justify-content-center">
-                                <img src={north} className="me-2" />
+                                <img src={north} className="me-2 image_size" />
                                 <div className="area">North</div>
                             </div>
                         </div>
@@ -60,7 +60,7 @@ const WeightMonitor = () => {
                         <div>
                             <div className="area_wise_value mb-5">595</div>
                             <div className="d-flex justify-content-center">
-                                <img src={center} className="me-2" />
+                                <img src={center} className="me-2 image_size" />
                                 <div className="area">Center</div>
                             </div>
                         </div>
@@ -69,7 +69,7 @@ const WeightMonitor = () => {
                         <div>
                             <div className="area_wise_value mb-5">549</div>
                             <div className="d-flex justify-content-center">
-                                <img src={south} className="me-2" />
+                                <img src={south} className="me-2 image_size" />
                                 <div className="area">South</div>
                             </div>
                         </div>
