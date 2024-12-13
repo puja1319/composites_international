@@ -3,8 +3,15 @@ import c_i_logo from "../Assets/Images/composite_logo.png"
 import north from "../Assets/Images/north.png"
 import center from "../Assets/Images/central.png"
 import south from "../Assets/Images/south.png"
+import { UserProfile } from "../Conetext/UserContext";
 
 const WeightMonitor = () => {
+
+    const { allBanner } = UserProfile();
+
+    useEffect(() => {
+        console.log("gage", allBanner)
+    }, [allBanner]);
 
     return (
         <div style={{ backgroundColor: '#F1F2F5' }}>
@@ -15,8 +22,10 @@ const WeightMonitor = () => {
             <div className="d-flex justify-content-between margin_main_x mt-5">
                 <div className="d-flex justify-content-between align-items-end w_38">
                     <div className="prod_date_head mb-3">Production Date/ Time :</div>
-                    <div className="time_div_font time_div px-4 py-3 bg-white">11/12/2024</div>
-                    <div className="time_div_font time_div px-4 py-3 bg-white">06:35:54</div>
+                    <div className="time_div_font time_div px-4 py-3 bg-white">
+                        {allBanner?.Gamma_Gage_Time}
+                    </div>
+                    {/* <div className="time_div_font time_div px-4 py-3 bg-white">06:35:54</div> */}
                 </div>
                 <div className="d-flex justify-content-between right_tracking_div p-3 w_42">
                     <div className="me-2 w-100">
@@ -44,12 +53,22 @@ const WeightMonitor = () => {
             <div className="margin_main_x mt-4 gauge_factor_div p-5 mb-5">
                 <div className="d-flex justify-content-center align-items-center mb-5">
                     <div className="gage_txt me-3">Gage Factor :</div>
-                    <div className="time_div px-4 py-3 bg-white d-flex justify-content-center align-items-center gage_txt_value">1.14</div>
+                    <div className="time_div px-4 py-3 bg-white d-flex justify-content-center align-items-center gage_txt_value">
+                        {allBanner?.Gage_Factor_Value}
+                    </div>
                 </div>
                 <div className="d-flex justify-content-around">
                     <div className="bg-white gauge_value_box d-flex justify-content-center align-items-center">
                         <div>
-                            <div className="area_wise_value mb-5">564</div>
+                            <div className="area_wise_value mb-5">
+                                {(parseFloat(allBanner?.Last_Scan_Data_E2
+                                    + allBanner?.Last_Scan_Data_E3
+                                    + allBanner?.Last_Scan_Data_E4
+                                    + allBanner?.Last_Scan_Data_E5
+                                    + allBanner?.Last_Scan_Data_E6
+                                    + allBanner?.Last_Scan_Data_E7
+                                )/6).toFixed(2)}
+                            </div>
                             <div className="d-flex justify-content-center">
                                 <img src={north} className="me-2 image_size" />
                                 <div className="area">North</div>
@@ -58,7 +77,15 @@ const WeightMonitor = () => {
                     </div>
                     <div className="bg-white gauge_value_box d-flex justify-content-center align-items-center">
                         <div>
-                            <div className="area_wise_value mb-5">595</div>
+                            <div className="area_wise_value mb-5">
+                                 {(parseFloat(allBanner?.Last_Scan_Data_E8
+                                    + allBanner?.Last_Scan_Data_E9
+                                    + allBanner?.Last_Scan_Data_E10
+                                    + allBanner?.Last_Scan_Data_E11
+                                    + allBanner?.Last_Scan_Data_E12
+                                    + allBanner?.Last_Scan_Data_E13
+                                )/6).toFixed(2)}
+                            </div>
                             <div className="d-flex justify-content-center">
                                 <img src={center} className="me-2 image_size" />
                                 <div className="area">Center</div>
@@ -67,7 +94,15 @@ const WeightMonitor = () => {
                     </div>
                     <div className="bg-white gauge_value_box d-flex justify-content-center align-items-center">
                         <div>
-                            <div className="area_wise_value mb-5">549</div>
+                            <div className="area_wise_value mb-5">
+                                {(parseFloat(allBanner?.Last_Scan_Data_E14
+                                    + allBanner?.Last_Scan_Data_E15
+                                    + allBanner?.Last_Scan_Data_E16
+                                    + allBanner?.Last_Scan_Data_E17
+                                    + allBanner?.Last_Scan_Data_E18
+                                    + allBanner?.Last_Scan_Data_E19
+                                )/6).toFixed(2)}
+                            </div>
                             <div className="d-flex justify-content-center">
                                 <img src={south} className="me-2 image_size" />
                                 <div className="area">South</div>
