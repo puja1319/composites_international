@@ -61,13 +61,7 @@ const WeightMonitor = () => {
                     <div className="bg-white gauge_value_box d-flex justify-content-center align-items-center">
                         <div>
                             <div className="area_wise_value mb-5">
-                                {((parseFloat(allBanner?.Last_Scan_Data_E2)
-                                    + parseFloat(allBanner?.Last_Scan_Data_E3)
-                                    + parseFloat(allBanner?.Last_Scan_Data_E4)
-                                    + parseFloat(allBanner?.Last_Scan_Data_E5)
-                                    + parseFloat(allBanner?.Last_Scan_Data_E6)
-                                    + parseFloat(allBanner?.Last_Scan_Data_E7)
-                                ) / 6).toFixed(2)}
+                                {parseFloat(allBanner?.north_val).toFixed(2)}
                             </div>
                             <div className="d-flex justify-content-center">
                                 <img src={north} className="me-2 image_size" />
@@ -78,13 +72,7 @@ const WeightMonitor = () => {
                     <div className="bg-white gauge_value_box d-flex justify-content-center align-items-center">
                         <div>
                             <div className="area_wise_value mb-5">
-                                {((parseFloat(allBanner?.Last_Scan_Data_E8)
-                                    + parseFloat(allBanner?.Last_Scan_Data_E9)
-                                    + parseFloat(allBanner?.Last_Scan_Data_E10)
-                                    + parseFloat(allBanner?.Last_Scan_Data_E11)
-                                    + parseFloat(allBanner?.Last_Scan_Data_E12)
-                                    + parseFloat(allBanner?.Last_Scan_Data_E13)
-                                ) / 6).toFixed(2)}
+                            {parseFloat(allBanner?.center_val).toFixed(2)}
                             </div>
                             <div className="d-flex justify-content-center">
                                 <img src={center} className="me-2 image_size" />
@@ -95,13 +83,7 @@ const WeightMonitor = () => {
                     <div className="bg-white gauge_value_box d-flex justify-content-center align-items-center">
                         <div>
                             <div className="area_wise_value mb-5">
-                                {((parseFloat(allBanner?.Last_Scan_Data_E14)
-                                    + parseFloat(allBanner?.Last_Scan_Data_E15)
-                                    + parseFloat(allBanner?.Last_Scan_Data_E16)
-                                    + parseFloat(allBanner?.Last_Scan_Data_E17)
-                                    + parseFloat(allBanner?.Last_Scan_Data_E18)
-                                    + parseFloat(allBanner?.Last_Scan_Data_E19)
-                                ) / 6).toFixed(2)}
+                            {parseFloat(allBanner?.south_val).toFixed(2)}
                             </div>
                             <div className="d-flex justify-content-center">
                                 <img src={south} className="me-2 image_size" />
