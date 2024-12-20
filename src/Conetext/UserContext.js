@@ -13,6 +13,7 @@ const UserProvider = ({ children }) => {
 
     const [allBanner, setAllBanner] = useState()
     const [limit, setLimit] = useState(0)
+    const [gageFactor, setGageFactor] = useState(0)
 
     useEffect(() => {
         
@@ -39,9 +40,21 @@ const UserProvider = ({ children }) => {
 
             console.log("Get All Banner response", response);
             setAllBanner(response.data[0]);
+            if(parseInt(response.data[0].total_count)===limit)
+            {
+                setLimit(0)
+            }
+            if(response.data[0].Gage_Factor_Value==="0.00"){
+                
+                
+            }
+            else{
+                setGageFactor(parseFloat(response.data[0].Gage_Factor_Value))
+            }
             return response;
         }
         catch (error) {
+            setGageFactor(0)
             console.log("Get All Banner CONTEXT ERROR: ", error);
         }
     }
@@ -51,7 +64,8 @@ const UserProvider = ({ children }) => {
             value={{
 
                 Get_All_Banner,
-                allBanner
+                allBanner,
+                gageFactor
             }}
         >
             {children}

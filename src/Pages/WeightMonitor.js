@@ -10,7 +10,7 @@ import Footer from "../Components/Footer";
 
 const WeightMonitor = () => {
 
-    const { allBanner } = UserProfile();
+    const { allBanner,gageFactor } = UserProfile();
 
     useEffect(() => {
         console.log("gage", allBanner)
@@ -54,7 +54,8 @@ const WeightMonitor = () => {
                 <div className="d-flex justify-content-center align-items-center mb-5">
                     <div className="gage_txt me-3">Gage Factor :</div>
                     <div className="time_div px-4 py-3 bg-white d-flex justify-content-center align-items-center gage_txt_value">
-                        {allBanner?.Gage_Factor_Value}
+                        {/* {allBanner?.Gage_Factor_Value} */}
+                        {gageFactor}
                     </div>
                 </div>
                 <div className="d-flex justify-content-around">
