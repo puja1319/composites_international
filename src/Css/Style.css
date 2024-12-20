@@ -152,6 +152,10 @@
     width: 22px;
 }
 
+.ml_8 {
+    margin-left: 0%;
+}
+
 @media screen and (min-width: 1920px) {
     .main_heading {
         font-family: Roboto;
@@ -301,5 +305,9 @@
     .image_size{
         height: 33px;
         width: 33px;
+    }
+
+    .ml_8 {
+        margin-left: 8%;
     }
 }

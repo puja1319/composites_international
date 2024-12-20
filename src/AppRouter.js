@@ -5,6 +5,7 @@ import React, {
     useEffect
 } from "react";
 import WeightMonitor from './Pages/WeightMonitor';
+import History from './Pages/History';
 
 const AppRouter = () => {
 
@@ -12,6 +13,7 @@ const AppRouter = () => {
         <Router>
             <Routes>
                 <Route exact path="/" Component={WeightMonitor} />
+                <Route exact path="/history" Component={History} />
             </Routes>
         </Router>
     );

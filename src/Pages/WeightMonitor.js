@@ -1,9 +1,12 @@
 import React, { useEffect, useState, } from "react";
+import { Link } from 'react-router-dom';
 import c_i_logo from "../Assets/Images/composite_logo.png"
 import north from "../Assets/Images/north.png"
 import center from "../Assets/Images/central.png"
 import south from "../Assets/Images/south.png"
 import { UserProfile } from "../Conetext/UserContext";
+import Header from "../Components/Header";
+import Footer from "../Components/Footer";
 
 const WeightMonitor = () => {
 
@@ -15,10 +18,7 @@ const WeightMonitor = () => {
 
     return (
         <div style={{ backgroundColor: '#F1F2F5' }}>
-            <div className="d-flex margin_main_x pt-4">
-                <img src={c_i_logo} className="" />
-                <div className="main_heading w-100">Gamma Gage Material Weight Monitor</div>
-            </div>
+            <Header title="Go to History" link="/history"/>
             <div className="d-flex justify-content-between margin_main_x mt-5">
                 <div className="d-flex justify-content-between align-items-end w_38">
                     <div className="prod_date_head mb-3">Production Date/ Time :</div>
@@ -94,7 +94,7 @@ const WeightMonitor = () => {
                 </div>
                 <div className="d-flex justify-content-center gage_factor_footer mt-5">Gamma Gage Material Weight (gm/sqft)</div>
             </div>
-            <div className="footer py-2 d-flex justify-content-end">Copyright © 2024 IDI Composites International. All Rights Reserved</div>
+            <Footer/>
         </div>
     )
 }
