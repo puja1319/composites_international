@@ -14,24 +14,31 @@ const UserProvider = ({ children }) => {
     const [allBanner, setAllBanner] = useState()
     const [limit, setLimit] = useState(0)
     const [gageFactor, setGageFactor] = useState(0)
+    const [dateTime, setDateTime] = useState([])
 
     useEffect(() => {
-        
+        Get_All_Time();
+    }, [])
+
+    useEffect(() => {
+
         const interval = setInterval(() => {
             setLimit(limit + 1);
             // temp=temp + 1
 
             Get_All_Banner();
-            
+
         }, 5000);
-        
+
         return () => clearInterval(interval);
     }, [limit]);
+
+
 
     const Get_All_Banner = async () => {
         console.log("after 1 second", limit)
         try {
-            const response = await axios.get("http://localhost/api/getdata.php?limit="+limit,
+            const response = await axios.get("http://localhost/api/getdata.php?limit=" + limit,
                 {
                     headers: {
                         'Content-Type': 'application/json',
@@ -40,15 +47,14 @@ const UserProvider = ({ children }) => {
 
             console.log("Get All Banner response", response);
             setAllBanner(response.data[0]);
-            if(parseInt(response.data[0].total_count)===limit)
-            {
+            if (parseInt(response.data[0].total_count) === limit) {
                 setLimit(0)
             }
-            if(response.data[0].Gage_Factor_Value==="0.00"){
-                
-                
+            if (response.data[0].Gage_Factor_Value === "0.00") {
+
+
             }
-            else{
+            else {
                 setGageFactor(parseFloat(response.data[0].Gage_Factor_Value))
             }
             return response;
@@ -59,13 +65,33 @@ const UserProvider = ({ children }) => {
         }
     }
 
+    const Get_All_Time = async () => {
+        try {
+            const response = await axios.get("http://localhost/api/gettime.php?limit=10",
+                {
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                })
+
+            console.log("Get All Time response", response);
+            setDateTime(response.data)
+            return response;
+        }
+        catch (error) {
+            console.log("Get All Time CONTEXT ERROR: ", error);
+        }
+    }
+
     return (
         <UserContext.Provider
             value={{
 
                 Get_All_Banner,
                 allBanner,
-                gageFactor
+                gageFactor,
+                Get_All_Time,
+                dateTime
             }}
         >
             {children}
