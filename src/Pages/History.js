@@ -6,11 +6,17 @@ import Footer from "../Components/Footer";
 
 const History = () => {
 
-    const { Get_All_Time,dateTime } = UserProfile();
-
+    const { Get_All_Time,dateTime,Get_All_History } = UserProfile();
+    const [allHistory,setAllHistory]=useState([])
     useEffect(() => {
-        console.log("datetime:", dateTime);
+        getHistoryOnPage()
     }, []);
+
+    const getHistoryOnPage=async()=>{
+        const resp=await Get_All_History()
+        setAllHistory(resp)
+        console.log("LIST HISTORY===>",resp)
+    }
 
     return (
         <>
@@ -24,43 +30,33 @@ const History = () => {
                     >
                         <thead>
                             <tr>
-                                <th scope="col">Select date</th>
-                                <th scope="col">Select time from</th>
-                                <th scope="col">Select time to</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Gage Factor</th>
                                 <th scope="col">North</th>
                                 <th scope="col">Center</th>
                                 <th scope="col">South</th>
+                                
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>2024-10-14</td>
+                        {allHistory.map((data, index) => (
+                            <tr key={index}>
+                                <td>{data.Gamma_Gage_Time}</td>
                                 <td scope="row">
-                                    <div className="dropdown">
-                                        <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Select time
-                                        </button>
-                                        <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                            <li><a className="dropdown-item" href="#">08:00:00</a></li>
-                                            <li><a className="dropdown-item" href="#">09:00:00</a></li>
-                                        </ul>
-                                    </div>
+                                    {data.Gage_Factor_Value}
                                 </td>
                                 <td>
-                                    <div className="dropdown">
-                                        <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Select time
-                                        </button>
-                                        <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                            <li><a className="dropdown-item" href="#">09:00:00</a></li>
-                                            <li><a className="dropdown-item" href="#">10:00:00</a></li>
-                                        </ul>
-                                    </div>
+                                    {data.north_val}
                                 </td>
-                                <td>200.00</td>
-                                <td>250.00</td>
-                                <td>120.00</td>
+                                <td>
+                                    {data.center_val}
+                                </td>
+                                <td>
+                                    {data.south_val}
+                                </td>
+                                
                             </tr>
+                        ))}
                         </tbody>
                     </table>
                 </div>

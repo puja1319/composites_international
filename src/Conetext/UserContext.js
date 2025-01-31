@@ -36,7 +36,7 @@ const UserProvider = ({ children }) => {
 
 
     const Get_All_Banner = async () => {
-        console.log("after 1 second", limit)
+        
         try {
             const response = await axios.get("http://localhost/api/getdata.php?limit=" + limit,
                 {
@@ -83,6 +83,22 @@ const UserProvider = ({ children }) => {
         }
     }
 
+    const Get_All_History = async () => {
+        try {
+            const response = await axios.get("http://localhost/api/historyData.php",
+                {
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                })
+
+           
+            return response.data;
+        }
+        catch (error) {
+            console.log("Get All Time CONTEXT ERROR: ", error);
+        }
+    }
     return (
         <UserContext.Provider
             value={{
@@ -91,7 +107,8 @@ const UserProvider = ({ children }) => {
                 allBanner,
                 gageFactor,
                 Get_All_Time,
-                dateTime
+                dateTime,
+                Get_All_History
             }}
         >
             {children}

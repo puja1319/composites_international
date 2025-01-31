@@ -13,7 +13,7 @@ const WeightMonitor = () => {
     const { allBanner,gageFactor } = UserProfile();
 
     useEffect(() => {
-        console.log("gage", allBanner)
+        
     }, [allBanner]);
 
     return (
